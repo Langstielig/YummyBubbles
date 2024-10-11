@@ -56,6 +56,7 @@ public class PanelsController : MonoBehaviour
                         LeaderboardLine newLine = new LeaderboardLine();
                         newLine.date = System.DateTime.Now.ToString("dd.MM.yyyy");
                         newLine.score = score;
+                        newLine.isNewLine = true;
                         DataHolder.lines[i] = newLine;
                         break;
                     }

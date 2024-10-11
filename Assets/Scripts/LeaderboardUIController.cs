@@ -1,3 +1,4 @@
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -31,6 +32,14 @@ public class LeaderboardUIController : MonoBehaviour
                 currentLine.GetComponent<TMP_Text>().text = lineText;
                 currentLine.transform.SetParent(lines.transform);
                 currentLine.transform.localScale = new Vector3(1f, 1f, 1f);
+
+                if (DataHolder.lines[i].isNewLine)
+                {
+                    Animator animator = currentLine.GetComponent<Animator>();
+                    animator.SetBool("isHighlighting", true);
+
+                    DataHolder.lines[i].isNewLine = false;
+                }
 
                 numberOfLine++;
             }

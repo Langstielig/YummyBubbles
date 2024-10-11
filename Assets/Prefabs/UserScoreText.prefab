@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7338608724142116973}
   - component: {fileID: 8409434772722755997}
   - component: {fileID: 4591091181780593465}
+  - component: {fileID: 827331752879521164}
   m_Layer: 5
   m_Name: UserScoreText
   m_TagString: Untagged
@@ -67,7 +68,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1. example - 45609 points
+  m_text: 1. 03.12.2002 - 90
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ba91a5d78d2c8284ea8a56798874116d, type: 2}
   m_sharedMaterial: {fileID: 7695064701334844081, guid: ba91a5d78d2c8284ea8a56798874116d, type: 2}
@@ -94,7 +95,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 2
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -156,3 +157,24 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!95 &827331752879521164
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4135023991497351622}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 091894e94d24b094dbea2c165ba0ac6e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
