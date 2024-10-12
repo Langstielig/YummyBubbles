@@ -11,8 +11,6 @@ public class BubblesGenerator : MonoBehaviour
     [SerializeField] private GameObject imagePrefab;
     [SerializeField] private GameObject images;
 
-    private GameObject xyinya;
-
     private Button[,] bubbles = new Button[10, 6];
     private int[,] bubblesIndex = new int[10, 6];
 
@@ -29,54 +27,6 @@ public class BubblesGenerator : MonoBehaviour
     {
         GenerateSprites();
         MakeTutorialBubbles();
-    }
-
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.F))
-        {
-
-            Vector3 coordinates = bubbles[0, 0].transform.position;
-            //Debug.Log("coordinates " + coordinates);
-            Vector3 localCoordinates = bubbles[0, 0].transform.localPosition;
-            //Debug.Log("local coordinates " + localCoordinates);
-            //Vector3 newCoordinates = Camera.main.ScreenToWorldPoint(coordinates);
-            float height = bubbles[0, 0].gameObject.GetComponent<RectTransform>().rect.height;
-            float width = bubbles[0, 0].gameObject.GetComponent<RectTransform>().rect.width;
-            GameObject newImage = Instantiate(imagePrefab);
-            newImage.GetComponent<RectTransform>().sizeDelta = new Vector2(width, height);
-            newImage.GetComponent<RectTransform>().anchoredPosition = new Vector2(10f, 10f);
-            newImage.transform.SetParent(images.transform);
-
-            //GameObject clone = Instantiate(bubbles[0, 0].gameObject);
-            //clone.transform.SetParent(images.transform);
-
-            //xyinya = newImage;
-
-            //AnimationClip clip = new AnimationClip();
-            //clip.legacy = true;
-            //Keyframe[] keys = new Keyframe[3]; 
-            //keys[0] = new Keyframe(0.0f, 0.0f); 
-            //keys[1] = new Keyframe(1.0f, 1.5f); 
-            //keys[2] = new Keyframe(2.0f, 0.0f); 
-            //AnimationCurve curve = new AnimationCurve(keys);
-            //clip.SetCurve("", typeof(Transform), "localPosition.x", curve);
-            //curve = AnimationCurve.Linear(0.0f, 1.0f, 2.0f, 0.0f);
-            //clip.SetCurve("", typeof(Renderer), "material._Color.r", curve);
-
-            //Animation anim = newImage.GetComponent<Animation>();
-            //anim.AddClip(clip, "Drop");
-            //anim.Play();
-        }
-        //if (xyinya != null)
-        //{
-        //    xyinya.transform.position = Vector3.MoveTowards(xyinya.transform.position, bubbles[1, 0].transform.position, 0.1f);
-        //    Debug.Log("distance is " + (xyinya.transform.position.y - bubbles[1, 0].transform.position.y));
-        //    if(xyinya.transform.position.y - bubbles[1, 0].transform.position.y <= 0)
-        //    {
-        //        Destroy(xyinya);
-        //    }
-        //}
     }
 
     public void ChangeGameStatus(bool status)

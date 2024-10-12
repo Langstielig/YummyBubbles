@@ -7,17 +7,7 @@ public class LeaderboardController : MonoBehaviour
 
     private void Awake()
     {
-        //#if UNITY_ANDROID && !UNITY_EDITOR
-        //        path = Application.dataPath + "leaderboard.csv";
-        //#else
-        //        path = Application.dataPath + "/Resources/" + "leaderboard.csv";
-
-        //        //string path1 = Application.streamingAssetsPath;
-        //        //Debug.Log("streamingAssetsPath " + path1);
-        //#endif
-
         path = Application.persistentDataPath + "/leaderboard.csv";
-        Debug.Log("path is " + path);
 
         ReadFromFile();
         BubbleSort();
@@ -25,7 +15,6 @@ public class LeaderboardController : MonoBehaviour
 
     private void ReadFromFile()
     {
-        //TextAsset leaderboardData = Resources.Load<TextAsset>("leaderboard");
         StreamReader reader = new StreamReader(path);
 
         if (reader == null)
@@ -34,8 +23,6 @@ public class LeaderboardController : MonoBehaviour
             file.Create();
 
             reader = new StreamReader(path);
-
-            Debug.Log("create csv file");
         }
 
         if (reader != null)
@@ -55,8 +42,6 @@ public class LeaderboardController : MonoBehaviour
                     index++;
                 }
             }
-
-            Debug.Log("read from csv file");
         }
     }
 
@@ -73,7 +58,6 @@ public class LeaderboardController : MonoBehaviour
             {
                 string str = DataHolder.lines[i].date + ';' + DataHolder.lines[i].score.ToString();
                 writer.WriteLine(str);
-                Debug.Log("write to csv file");
             }
         }
         writer.Close();
